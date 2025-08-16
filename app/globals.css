@@ -1,15 +1,7 @@
 @import "tailwindcss";
 
-html,
 body {
-  margin: 0;
+  margin: 0 2rem;
   padding: 0;
   box-sizing: border-box;
-  min-width: 578px;
-}
-
-@media (max-width: 578px) {
-  #__next {
-    min-width: 578px;
-  }
 }
