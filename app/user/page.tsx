@@ -1,4 +1,5 @@
-import React from "react";
+
+import TimeDate from '../components/TimeDate';
 
 interface Username {
   id: number;
@@ -14,17 +15,35 @@ const Users = async () => {
   });
   const username: Username[] = await response.json();
 
+
   return (
     <>
       <h1 className="font-bold text-center text-5xl">Usernames</h1>
-      <p>{new Date().toLocaleTimeString()}</p>
-      <ul>
-        {username.map((usernames) => (
-          <li className="my-7 font-bold" key={usernames.id}>
-            {usernames.id}: {usernames.username}
-          </li>
-        ))}
-      </ul>
+      <TimeDate/>
+      <table className="border border-gray-300 mt-8 w-full">
+        <thead>
+          <tr className="bg-gray-100">
+            <th className="py-2 px-4 border-b">ID</th>
+            <th className="py-2 px-4 border-b">Username</th>
+            <th className="py-2 px-4 border-b">Street</th>
+            <th className="py-2 px-4 border-b">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {username.map((user) => (
+            <tr key={user.id} className="text-center">
+              <td className="py-2 px-4 border-b bg-blue-300">{user.id}</td>
+              <td className="py-2 px-4 border-b">{user.username}</td>
+              <td className="py-2 px-4 border-b bg-blue-300">{user.address.street}</td>
+              <td className='gap-6 flex justify-center items-center py-2 px-4 border-b'>
+                <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300">Info</button>
+                <button className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition duration-300">Update</button>
+               
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </>
   );
 };
