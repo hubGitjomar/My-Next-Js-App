@@ -5,32 +5,32 @@ import Image from "next/image";
 
 const Navbar = () => {
   return (
-    <div className="flex p-2 justify-between ">
+    <div className="flex p-2 justify-between">
       <Link href="../user">
-        <Image src="/favicon.ico" alt="dikc" width={32} height={32}/>
+        <Image src="/favicon.ico" alt="dikc" width={32} height={32} />
       </Link>
       <ul className="flex gap-4">
         <Link
-          className="hover:bg-[#483AA0] hover:scale-105 transition duration-300 p-1"
-          href="../user/projects"
+          className="hover:bg-[#483AA0] hover:scale-105 rounded transition duration-300 p-1"
+          href="../projects"
         >
           Projects
         </Link>
         <Link
-          className="hover:bg-[#483AA0] hover:scale-105 transition duration-300 p-1"
-          href="../user/skills"
+          className="hover:bg-[#483AA0] hover:scale-105 rounded transition duration-300 p-1"
+          href="../skills"
         >
           Skills/Services
         </Link>
         <Link
-          className="hover:bg-[#483AA0] hover:scale-105 transition duration-300 p-1"
-          href="../user/resume"
+          className="hover:bg-[#483AA0] hover:scale-105 rounded transition duration-300 p-1"
+          href="../resume"
         >
           Resume
         </Link>
         <Link
-          className="hover:bg-[#483AA0] hover:scale-105 transition duration-300 p-1"
-          href="../user/contact"
+          className="hover:bg-[#483AA0] hover:scale-105 rounded transition duration-300 p-1"
+          href="../contact"
         >
           Contact
         </Link>
